@@ -1,65 +1,51 @@
 export * from "./config";
 
-import { Box, createBox } from "./Box";
-import { addBoxToMap, eliminateLine, initMap } from "./map";
-import { render } from "./renderer";
+import { Game } from "./Game";
+import { createBox, createBoxByType } from "./Box";
+import { initMap } from "./map";
+import { Player } from "./Player";
+import { initMessage, message } from "./message";
+import { Rival } from "./Rival";
 import { addTicker } from "./ticker";
-import { intervalTimer } from "./utils";
-import { hitBottomBoundary, hitBottomBox } from "./hit";
 
-let activeBox;
-export function startGame(map) {
-  initMap(map);
+let selfGame: Game;
+let rivalGame: Game;
+let player: Player;
+let rival: Rival;
+export function initSelfGame(map) {
+  const box = createBox();
+  selfGame = new Game(box, initMap(map));
+  player = new Player(selfGame);
 
-  // box
-  // 我要有一个 方块
-  activeBox = createBox();
-
-  // 1秒 执行一次
-  let timeInterval = 1000;
-  const isDown = intervalTimer(timeInterval);
-  function handleTicker(n) {
-    if (isDown(n)) {
-      moveDown(activeBox, map);
-    }
-
-    render(activeBox, map);
-  }
-
-  addTicker(handleTicker);
-
-  // 方块可以掉落
-  window.addEventListener("keydown", (e) => {
-    switch (e.code) {
-      case "ArrowLeft":
-        activeBox.x--;
-
-        break;
-      case "ArrowRight":
-        activeBox.x++;
-
-        break;
-
-      case "ArrowUp":
-        activeBox.rotate();
-
-      default:
-        break;
-    }
+  message.emit("initSelfGame", {
+    box: {
+      type: box.type,
+    },
   });
 }
 
-export function moveDown(box, map) {
-  // 1. 获取 box 底部的所有的点
-  // 只要有一个点大于了 游戏的范围的话， 那么就不可以移动啦
-  if (hitBottomBoundary(box, map) || hitBottomBox(box, map)) {
-    addBoxToMap(box, map);
-    eliminateLine(map);
-    // 重新给一个 box
-    activeBox = createBox();
-    return;
-  }
+export function initRivalGame(map) {
+  rivalGame = new Game(null, initMap(map));
+  rival = new Rival(rivalGame);
 
-  // 2. 检测是不是有某个点超出了游戏的范围
-  box.y++;
+  message.on("initSelfGame", (info) => {
+    rivalGame.setBox(createBoxByType(info.box.type));
+  });
 }
+
+let isStarted = false;
+export function startGame() {
+  isStarted = true;
+  player.start();
+}
+
+export function initGame() {
+  initMessage();
+}
+
+//主循环
+addTicker(() => {
+  if (!isStarted) return;
+  selfGame.render();
+  rivalGame.render();
+});

@@ -1,4 +1,8 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import { initGame } from "./game";
 
-createApp(App).mount('#app')
+
+
+initGame()
+createApp(App).mount("#app");

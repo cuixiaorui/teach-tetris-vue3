@@ -4,9 +4,11 @@ export class Box {
   shape: number[][];
   x: number;
   y: number;
-  constructor() {
+  type: number;
+  constructor(type = 0) {
     this.x = 0;
     this.y = 0;
+    this.type = type;
     this.shape = [
       [1, 1],
       [1, 1],
@@ -33,6 +35,7 @@ export class Box {
 
 const boxInfos = {
   1: {
+    type: 1,
     shape: [
       [1, 1],
       [1, 1],
@@ -40,6 +43,7 @@ const boxInfos = {
   },
 
   2: {
+    type: 2,
     shape: [
       [1, 0, 0],
       [1, 1, 0],
@@ -48,6 +52,7 @@ const boxInfos = {
     rotateStrategy: [rotate, (m) => rotate(rotate(rotate(m)))],
   },
   3: {
+    type: 3,
     shape: [
       [1, 0, 0],
       [1, 0, 0],
@@ -58,8 +63,18 @@ const boxInfos = {
 };
 
 export function createBox() {
-  const box = new Box();
-  const { shape, rotateStrategy } = getRandomBoxInfo();
+  const { shape, rotateStrategy, type } = getRandomBoxInfo();
+  const box = new Box(type);
+
+  box.shape = shape;
+  box.setRotates(rotateStrategy);
+
+  return box;
+}
+
+export function createBoxByType(type) {
+  const box = new Box(type);
+  const { shape, rotateStrategy } = boxInfos[type];
 
   box.shape = shape;
   box.setRotates(rotateStrategy);

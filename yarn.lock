@@ -558,6 +558,11 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/component-emitter@^1.2.10":
+  version "1.2.10"
+  resolved "https://registry.nlark.com/@types/component-emitter/download/@types/component-emitter-1.2.10.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fcomponent-emitter%2Fdownload%2F%40types%2Fcomponent-emitter-1.2.10.tgz#ef5b1589b9f16544642e473db5ea5639107ef3ea"
+  integrity sha1-71sVibnxZURkLkc9tepWORB+8+o=
+
 "@types/graceful-fs@^4.1.2":
   version "4.1.5"
   resolved "https://registry.nlark.com/@types/graceful-fs/download/@types/graceful-fs-4.1.5.tgz?cache=0&sync_timestamp=1629708271019&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fgraceful-fs%2Fdownload%2F%40types%2Fgraceful-fs-4.1.5.tgz#21ffba0d98da4350db64891f92a9e5db3cdb4e15"
@@ -932,10 +937,20 @@ babel-walk@3.0.0-canary-5:
   dependencies:
     "@babel/types" "^7.9.6"
 
+backo2@~1.0.2:
+  version "1.0.2"
+  resolved "https://registry.nlark.com/backo2/download/backo2-1.0.2.tgz#31ab1ac8b129363463e35b3ebb69f4dfcfba7947"
+  integrity sha1-MasayLEpNjRj41s+u2n038+6eUc=
+
 balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.npm.taobao.org/balanced-match/download/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha1-6D46fj8wCzTLnYf2FfoMvzV2kO4=
+
+base64-arraybuffer@0.1.4:
+  version "0.1.4"
+  resolved "https://registry.nlark.com/base64-arraybuffer/download/base64-arraybuffer-0.1.4.tgz?cache=0&sync_timestamp=1628588899217&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fbase64-arraybuffer%2Fdownload%2Fbase64-arraybuffer-0.1.4.tgz#9818c79e059b1355f97e0428a017c838e90ba812"
+  integrity sha1-mBjHngWbE1X5fgQooBfIOOkLqBI=
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -1104,6 +1119,11 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
+component-emitter@~1.3.0:
+  version "1.3.0"
+  resolved "https://registry.nlark.com/component-emitter/download/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
+  integrity sha1-FuQHD7qK4ptnnyIVhT7hgasuq8A=
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.npm.taobao.org/concat-map/download/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
@@ -1164,7 +1184,7 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
-debug@4, debug@^4.1.0, debug@^4.1.1:
+debug@4, debug@^4.1.0, debug@^4.1.1, debug@~4.3.1:
   version "4.3.2"
   resolved "https://registry.nlark.com/debug/download/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
   integrity sha1-8KScGKyHeeMdSgxgKd+3aHPHQos=
@@ -1270,6 +1290,28 @@ emoji-regex@^8.0.0:
   version "8.0.0"
   resolved "https://registry.npm.taobao.org/emoji-regex/download/emoji-regex-8.0.0.tgz?cache=0&sync_timestamp=1614682725186&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Femoji-regex%2Fdownload%2Femoji-regex-8.0.0.tgz#e818fd69ce5ccfcb404594f842963bf53164cc37"
   integrity sha1-6Bj9ac5cz8tARZT4QpY79TFkzDc=
+
+engine.io-client@~5.1.2:
+  version "5.1.2"
+  resolved "https://registry.nlark.com/engine.io-client/download/engine.io-client-5.1.2.tgz?cache=0&sync_timestamp=1630218298617&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fengine.io-client%2Fdownload%2Fengine.io-client-5.1.2.tgz#27108da9b39ae03262443d945caf2caa3655c4cb"
+  integrity sha1-JxCNqbOa4DJiRD2UXK8sqjZVxMs=
+  dependencies:
+    base64-arraybuffer "0.1.4"
+    component-emitter "~1.3.0"
+    debug "~4.3.1"
+    engine.io-parser "~4.0.1"
+    has-cors "1.1.0"
+    parseqs "0.0.6"
+    parseuri "0.0.6"
+    ws "~7.4.2"
+    yeast "0.1.2"
+
+engine.io-parser@~4.0.1:
+  version "4.0.3"
+  resolved "https://registry.nlark.com/engine.io-parser/download/engine.io-parser-4.0.3.tgz?cache=0&sync_timestamp=1630216807856&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fengine.io-parser%2Fdownload%2Fengine.io-parser-4.0.3.tgz#83d3a17acfd4226f19e721bb22a1ee8f7662d2f6"
+  integrity sha1-g9Ohes/UIm8Z5yG7IqHuj3Zi0vY=
+  dependencies:
+    base64-arraybuffer "0.1.4"
 
 entities@^2.0.0:
   version "2.2.0"
@@ -1466,6 +1508,11 @@ graceful-fs@^4.2.4:
   version "4.2.8"
   resolved "https://registry.nlark.com/graceful-fs/download/graceful-fs-4.2.8.tgz#e412b8d33f5e006593cbd3cee6df9f2cebbe802a"
   integrity sha1-5BK40z9eAGWTy9PO5t+fLOu+gCo=
+
+has-cors@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.nlark.com/has-cors/download/has-cors-1.1.0.tgz#5e474793f7ea9843d1bb99c23eef49ff126fff39"
+  integrity sha1-XkdHk/fqmEPRu5nCPu9J/xJv/zk=
 
 has-flag@^3.0.0:
   version "3.0.0"
@@ -2393,6 +2440,16 @@ parse5@6.0.1:
   resolved "https://registry.nlark.com/parse5/download/parse5-6.0.1.tgz#e1a1c085c569b3dc08321184f19a39cc27f7c30b"
   integrity sha1-4aHAhcVps9wIMhGE8Zo5zCf3wws=
 
+parseqs@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.nlark.com/parseqs/download/parseqs-0.0.6.tgz#8e4bb5a19d1cdc844a08ac974d34e273afa670d5"
+  integrity sha1-jku1oZ0c3IRKCKyXTTTic6+mcNU=
+
+parseuri@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.nlark.com/parseuri/download/parseuri-0.0.6.tgz#e1496e829e3ac2ff47f39a4dd044b32823c4a25a"
+  integrity sha1-4Ulugp46wv9H85pN0ESzKCPEolo=
+
 path-exists@^4.0.0:
   version "4.0.0"
   resolved "https://registry.nlark.com/path-exists/download/path-exists-4.0.0.tgz?cache=0&sync_timestamp=1628765027018&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpath-exists%2Fdownload%2Fpath-exists-4.0.0.tgz#513bdbe2d3b95d7762e8c1137efa195c6c61b5b3"
@@ -2688,6 +2745,28 @@ slash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npm.taobao.org/slash/download/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha1-ZTm+hwwWWtvVJAIg2+Nh8bxNRjQ=
+
+socket.io-client@~4.1.0:
+  version "4.1.3"
+  resolved "https://registry.nlark.com/socket.io-client/download/socket.io-client-4.1.3.tgz#236daa642a9f229932e00b7221e843bf74232a62"
+  integrity sha1-I22qZCqfIpky4AtyIehDv3QjKmI=
+  dependencies:
+    "@types/component-emitter" "^1.2.10"
+    backo2 "~1.0.2"
+    component-emitter "~1.3.0"
+    debug "~4.3.1"
+    engine.io-client "~5.1.2"
+    parseuri "0.0.6"
+    socket.io-parser "~4.0.4"
+
+socket.io-parser@~4.0.4:
+  version "4.0.4"
+  resolved "https://registry.nlark.com/socket.io-parser/download/socket.io-parser-4.0.4.tgz#9ea21b0d61508d18196ef04a2c6b9ab630f4c2b0"
+  integrity sha1-nqIbDWFQjRgZbvBKLGuatjD0wrA=
+  dependencies:
+    "@types/component-emitter" "^1.2.10"
+    component-emitter "~1.3.0"
+    debug "~4.3.1"
 
 source-map-js@^0.6.2:
   version "0.6.2"
@@ -3191,6 +3270,11 @@ ws@^7.4.6:
   resolved "https://registry.nlark.com/ws/download/ws-7.5.5.tgz#8b4bc4af518cfabd0473ae4f99144287b33eb881"
   integrity sha1-i0vEr1GM+r0Ec65PmRRCh7M+uIE=
 
+ws@~7.4.2:
+  version "7.4.6"
+  resolved "https://registry.nlark.com/ws/download/ws-7.4.6.tgz#5654ca8ecdeee47c33a9a4bf6d28e2be2980377c"
+  integrity sha1-VlTKjs3u5HwzqaS/bSjivimAN3w=
+
 xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://registry.nlark.com/xml-name-validator/download/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
@@ -3228,3 +3312,8 @@ yargs@^16.0.3:
     string-width "^4.2.0"
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
+
+yeast@0.1.2:
+  version "0.1.2"
+  resolved "https://registry.nlark.com/yeast/download/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
+  integrity sha1-AI4G2AlDIMNy28L47XagymyKxBk=

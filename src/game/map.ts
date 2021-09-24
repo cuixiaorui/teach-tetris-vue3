@@ -12,6 +12,8 @@ export function initMap(map) {
 
     map.push(arr);
   }
+
+  return map;
 }
 
 export function addBoxToMap(box, map) {
